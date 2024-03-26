@@ -3,7 +3,7 @@ import AuthForm from "../../Components/AuthForm/AuthForm";
 
 const AuthPage = () => {
   return (
-    <Flex minH={"100vh"} justifyContent={"Conter"} alignItems={"center"} px={4}>
+    <Flex minH={"100vh"} justifyContent={"Conter"} alignItems={"center"} px={5}>
       <Container maxW={"container.md"} padding={0}>
         <Flex justifyContent={"center"} alignItems={"center"} gap={10}>
 
@@ -13,7 +13,7 @@ const AuthPage = () => {
           </Box>
 
           {/* right */}
-          <VStack spacing={4} align={"stretch"}>
+          <VStack spacing={1} align={"stretch"}>
             <AuthForm />
             <Box textAlign={"center"}>Get The App</Box>
             <Flex gap={5} justifyContent={"center"}>
