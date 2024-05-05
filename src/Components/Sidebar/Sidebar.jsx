@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Tooltip, Avatar } from "@chakra-ui/react";
+import { Box, Flex, Link, Tooltip, Avatar, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import {
   CreatePostLogo,
@@ -9,7 +9,7 @@ import {
 } from "../../assets/constants";
 import { BiLogOut } from "react-icons/bi";
 import { AiFillHome } from "react-icons/ai";
-
+import useLogout from "../../hooks/useLogout";
 const Sidebar = () => {
   const sidebarItems = [
     {
@@ -35,6 +35,8 @@ const Sidebar = () => {
       link: "/asaprogrammer",
     },
   ];
+
+  const { handleLogout, isLoggingOut} = useLogout();
 
   return (
     <Box
@@ -109,44 +111,27 @@ const Sidebar = () => {
           openDelay={500}
           display={{ base: "block", md: "none" }}
         >
-          {/* <Flex
-                        // onClick={handleLogout} 
-                        alignItems={"center"}
-                        gap={4}
-                        _hover={{ bg: "whiteAlpha.400" }}
-                        borderRadius={6}
-                        p={2}
-                        w={{ base: 10, md: "full" }}
-                        mt={"auto"}
-                        justifyContent={{ base: "center", md: "flex-start" }}
-                    >
-                        <BiLogOut size={25} />
-                        <Button
-                            display={{ base: "none", md: "block" }}
-                            variant={"ghost"}
-                            _hover={{ bg: "transparent" }}
-                            // isLoading={isLoggingOut}
-                        >
-                            Logout
-                        </Button>
-                    </Flex> */}
-
-          <Link
-            display={"flex"}
-            to={"/auth"}
-            as={RouterLink}
+          <Flex
+            onClick={handleLogout}
             alignItems={"center"}
             gap={4}
             _hover={{ bg: "whiteAlpha.400" }}
             borderRadius={6}
             p={2}
             w={{ base: 10, md: "full" }}
-            justifyContent={{ base: "center", md: "flex-start" }}
             mt={"auto"}
+            justifyContent={{ base: "center", md: "flex-start" }}
           >
             <BiLogOut size={25} />
-            <Box display={{ base: "none", md: "block" }}>Logout</Box>
-          </Link>
+            <Button
+              display={{ base: "none", md: "block" }}
+              variant={"ghost"}
+              _hover={{ bg: "transparent" }}
+              isLoading={isLoggingOut}
+            >
+              Logout
+            </Button>
+          </Flex>
         </Tooltip>
       </Flex>
     </Box>
