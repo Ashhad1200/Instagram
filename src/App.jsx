@@ -2,11 +2,12 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import AuthPage from "./Pages/AuthPage/AuthPage";
 import PageLayout from "./Layouts/PageLayout/PageLayout";
-import ProfilePage from "./Pages/ProfilePage/ProfilePage";
-import useAuthStore from "./store/authStore";
+import ProfilePage from "./Pages/ProfilePage/ProfilePage";  
+import { auth } from "./Firebase/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function App() {
-  const authUser = useAuthStore(state => state.user);
+  const [authUser] = useAuthState(auth);
   return (
     <>
       <PageLayout>
