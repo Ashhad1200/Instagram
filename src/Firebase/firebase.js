@@ -6,13 +6,13 @@ import { getStorage } from "firebase/storage";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDbJ3ooSH9imxW6g023mbZJoWvVQq2Xm9o",
-  authDomain: "instagram-6121e.firebaseapp.com",
-  projectId: "instagram-6121e",
-  storageBucket: "instagram-6121e.appspot.com",
-  messagingSenderId: "836795429433",
-  appId: "1:836795429433:web:2518d335e59c7341c813e8",
-  measurementId: "G-NQ7VW2HG48"
+	apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+	authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+	projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+	storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+	appId: import.meta.env.VITE_FIREBASE_APP_ID,
+	measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 
