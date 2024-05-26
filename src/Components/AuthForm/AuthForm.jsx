@@ -4,6 +4,7 @@ import { useState } from "react";
 import Signup from "./Signup";
 import Login from "./Login";
 import GoogleAuth from "./GoogleAuth";
+import GithubAuth from "./GithubAuth";
 
 const AuthForm = () => {
   const [isLogin, SetIsLogin] = useState(true);
@@ -30,6 +31,7 @@ const AuthForm = () => {
           </Flex>
 
           <GoogleAuth prefix={isLogin ? "Log in" : "Sign up"}/>
+          <GithubAuth prefix={isLogin ? "Log in" : "Sign up"}/>
         </VStack>
       </Box>
 
